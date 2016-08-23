@@ -1,0 +1,36 @@
+{
+  "name": "cc-mwc",
+  "version": "1.0.0",
+  "description": "Tutor reservation web app for Cascadia College's Math and Writing Center",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csarkosh/cc-mwc.git"
+  },
+  "keywords": [
+    "Cascadia",
+    "College",
+    "Math",
+    "Writing",
+    "Center",
+    "Tutor",
+    "Reservation",
+    "Web",
+    "Website",
+    "App"
+  ],
+  "author": "Cyrus Sarkosh and Michael Nissenson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/csarkosh/cc-mwc/issues"
+  },
+  "homepage": "https://github.com/csarkosh/cc-mwc#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mysql": "^2.11.1"
+  }
+}

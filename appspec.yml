@@ -5,16 +5,16 @@ version: 0.0
 
 files:
   - source: app.js
-    destination: /opt/cc-mwc
+    destination: /opt/ccmwc
 
   - source: package.json
-    destination: /opt/cc-mwc
+    destination: /opt/ccmwc
 
   - source: routes
-    destination: /opt/cc-mwc/routes
+    destination: /opt/ccmwc/routes
 
   - source: public
-    destination: /opt/cc-mwc/public
+    destination: /opt/ccmwc/public
 
 
 

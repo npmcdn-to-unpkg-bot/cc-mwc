@@ -1,3 +1,4 @@
 #!/bin/bash
 
-# to implement
+cd /opt/ccmwc
+npm install --production

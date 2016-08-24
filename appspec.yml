@@ -1,0 +1,32 @@
+os: linux
+version: 0.0
+
+
+
+files:
+  - source: app.js
+    destination: /opt/cc-mwc
+
+  - source: package.json
+    destination: /opt/cc-mwc
+
+  - source: routes
+    destination: /opt/cc-mwc/routes
+
+  - source: public
+    destination: /opt/cc-mwc/public
+
+
+
+hooks:
+  BeforeInstall:
+    - location: deployment/BeforeInstall.sh
+      runas: root
+
+  AfterInstall:
+    - location: deployment/AfterInstall.sh
+      runas: root
+
+  ApplicationStart:
+    - location: deployment/ApplicationStart.sh
+      runas: root

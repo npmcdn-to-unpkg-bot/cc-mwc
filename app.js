@@ -4,6 +4,9 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var mysql = require('mysql');
 
+// custome modules
+var log = require('./lib/log');
+
 // setup dependencies
 var app = express();
 
@@ -15,5 +18,5 @@ app.use('/test', require('./routes/testRoute'));
 
 // set port
 app.listen(8080, function() {
-	console.log('app.js listening on port 8080');
+	log('application using port 8080', 'app');
 });

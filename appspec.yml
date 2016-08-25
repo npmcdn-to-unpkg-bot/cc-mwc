@@ -22,9 +22,6 @@ files:
   - source: lib
     destination: /opt/ccmwc/lib
 
-  - source: lib
-    destination: /opt/ccmwc/lib
-
 
 
 hooks:

@@ -1,10 +1,30 @@
 
 <!DOCTYPE html>
-<html>
+<html ng-app="app-angular">
 <head>
+	<!-- import scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+		crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+
+
+	<!-- import styles -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+	<!-- angular imports -->
+	<script src="js/app-angular.js"></script>
+	<script src="js/controllers/homeController.js"></script>
+	<script src="js/controllers/adminController.js"></script>
+
 	<title>Hello World!</title>
 </head>
 <body>
 	<h1>Hello World!</h1>
+
+	<div ng-view></div>
 </body>
 </html>

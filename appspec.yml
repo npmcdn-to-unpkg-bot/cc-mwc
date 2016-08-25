@@ -18,6 +18,9 @@ files:
 
   - source: public
     destination: /opt/ccmwc/public
+    
+  - source: lib
+    destination: /opt/ccmwc/lib
 
   - source: lib
     destination: /opt/ccmwc/lib

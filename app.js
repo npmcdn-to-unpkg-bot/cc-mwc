@@ -12,7 +12,6 @@ var app = express();
 var connection = mysql.createConnection({
 	host: 'localhost',
 	user: 'root',
-	password: 'password',
 	database: 'ccmwc'
 });
 connection.connect();

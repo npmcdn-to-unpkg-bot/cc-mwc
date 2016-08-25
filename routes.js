@@ -2,15 +2,11 @@
 // dependencies
 var router = require('express').Router();
 
-// middleware
+// api middleware
 router.use(function(req, res, next) {
 	next();
 })
 
-.route('/')
-	.get(function(req, res) {
-		return res.status(200).send('/test route: OK');
-	});
+.use('/test', require('./api/test'));
 
-// export route
 module.exports = router;

@@ -9,12 +9,24 @@ var log = require('./lib/log');
 
 // setup dependencies
 var app = express();
+var connection = mysql.createConnection({
+	host: 'localhost',
+	user: 'root',
+	password: 'password',
+	database: 'ccmwc'
+});
+connection.connect();
+
+// set global vars
+app.set('connection', connection);
+app.set('express', express);
+app.set('mysql', mysql);
 
 // middleware
 app.use(express.static(__dirname + '/public'));
 
-// routes
-app.use('/test', require('./routes/testRoute'));
+// api routes
+app.use('/api', require('./routes'));
 
 // set port
 app.listen(8080, function() {

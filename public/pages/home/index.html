@@ -2,7 +2,7 @@
 <div id="home-div">
 
 	<!-- info table -->
-	<span>
+	<span class="col-md-12">
 		<h3>Key</h3>
 		<i class="fa fa-angle-down" 
 			ng-click="alterShowInfoTable()"
@@ -14,12 +14,13 @@
 		</i>
 	</span>
 	<div id="infoTable" 
+		class="col-md-3"
 		ng-show="showInfoTable" 
 		ng-include="'pages/home/infoTable.html'">
 	</div>
 
 	<!-- tutor reservation table -->
-	<span>
+	<span class="col-md-12">
 		<h3>Make a reservation</h3>
 		<i class="fa fa-angle-down" 
 			ng-click="alterShowReserveTable()"

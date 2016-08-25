@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html ng-app="app-angular">
+<html ng-app="app-angular" lang="en">
 <head>
 	<!-- import scripts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
@@ -14,17 +14,40 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/home.css">
 
 	<!-- angular imports -->
 	<script src="js/app-angular.js"></script>
 	<script src="js/controllers/homeController.js"></script>
 	<script src="js/controllers/adminController.js"></script>
 
-	<title>Hello World!</title>
+	<!-- meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Reserve a tutor</title>
 </head>
 <body>
-	<h1>Hello World!</h1>
 
-	<div ng-view></div>
+	<!-- top-fixed navigation bar -->
+	<div class="container-fluid">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<ul class="nav navbar-nav">
+						<li><a ng-href="/#/">Reserve a tutor</a></li>
+					</ul>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul id="nav-opts" class="nav navbar-nav">
+						<li><a ng-href="/#/admin">Admin <i class="fa fa-sign-in"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<!-- import views -->
+	<div id="imported-views" class="container" ng-view></div>
+
 </body>
 </html>

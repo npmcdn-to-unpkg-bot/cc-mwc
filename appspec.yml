@@ -10,11 +10,17 @@ files:
   - source: package.json
     destination: /opt/ccmwc
 
-  - source: routes
-    destination: /opt/ccmwc/routes
+  - source: routes.js
+    destination: /opt/ccmwc
+
+  - source: api
+    destination: /opt/ccmwc/api
 
   - source: public
     destination: /opt/ccmwc/public
+
+  - source: lib
+    destination: /opt/ccmwc/lib
 
 
 

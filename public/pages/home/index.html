@@ -1,1 +1,37 @@
-<h2>home/index.html</h2>
+
+<div id="home-div">
+
+	<!-- info table -->
+	<span>
+		<h3>Key</h3>
+		<i class="fa fa-angle-down" 
+			ng-click="alterShowInfoTable()"
+			ng-show="showInfoTable">
+		</i>
+		<i class="fa fa-angle-up"
+			ng-click="alterShowInfoTable()"
+			ng-show="!showInfoTable">
+		</i>
+	</span>
+	<div id="infoTable" 
+		ng-show="showInfoTable" 
+		ng-include="'pages/home/infoTable.html'">
+	</div>
+
+	<!-- tutor reservation table -->
+	<span>
+		<h3>Make a reservation</h3>
+		<i class="fa fa-angle-down" 
+			ng-click="alterShowReserveTable()"
+			ng-show="showReserveTable">
+		</i>
+		<i class="fa fa-angle-up"
+			ng-click="alterShowReserveTable()"
+			ng-show="!showReserveTable">
+		</i>
+	</span>
+	<div id="reserveTable" 
+		ng-show="showReserveTable" 
+		ng-include="'pages/home/reserveTable.html'"></div>
+
+</div>

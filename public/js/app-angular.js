@@ -1,5 +1,5 @@
 
-angular.module('app-angular', ['ngRoute'])
+angular.module('app-angular', ['ngRoute', 'ngCookies'])
 .config(['$routeProvider', function($routeProvider) {
 
 	$routeProvider

@@ -1,0 +1,22 @@
+
+/* header styles */
+
+#home-div span {
+	display: block;
+}
+
+#home-div span h3, #home-div span i {
+	display: inline-block;
+}
+
+#home-div span h3 + i {
+	margin-left: 5px;
+}
+
+#home-div span h3 + i + i {
+	margin-left: 5px;
+}
+
+#home-div i:hover {
+	cursor: pointer;
+}

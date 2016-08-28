@@ -9,12 +9,6 @@ var log = require('./lib/log');
 
 // setup dependencies
 var app = express();
-// var connection = mysql.createConnection({
-// 	host: 'localhost',
-// 	user: 'root',
-// 	database: 'ccmwc'
-// });
-// connection.connect();
 var mysql_config = {
 	host: 'localhost',
 	user: 'root',

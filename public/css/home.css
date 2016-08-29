@@ -17,6 +17,6 @@
 	margin-left: 5px;
 }
 
-#home-div i:hover {
+#home-div span.collapse-header:hover {
 	cursor: pointer;
 }

@@ -1,4 +1,4 @@
 angular.module('app-angular')
-.controller('adminController', ['$scope', function($scope) {
+.controller('adminController', ['$scope', '$http', function($scope, $http) {
 
 }]);

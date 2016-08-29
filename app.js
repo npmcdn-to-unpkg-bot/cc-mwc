@@ -6,12 +6,14 @@ var mysql = require('mysql');
 
 // custome modules
 var log = require('./lib/log');
+var api = require('./api/api');
 
 // setup dependencies
 var app = express();
 var mysql_config = {
 	host: 'localhost',
 	user: 'root',
+	password: 'password',
 	database: 'ccmwc'
 }
 var connection;
@@ -43,7 +45,7 @@ app.set('mysql', mysql);
 app.use(express.static(__dirname + '/public'));
 
 // api routes
-app.use('/api', require('./routes'));
+app.use('/api', api);
 
 // set port
 app.listen(8080, function() {

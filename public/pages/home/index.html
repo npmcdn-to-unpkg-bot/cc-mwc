@@ -2,37 +2,15 @@
 <div id="home-div">
 
 	<!-- info table header -->
-	<span class="col-md-12 collapse-header" ng-click="alterShowInfoTable()">
-		<h3>Key</h3>
-		<i class="fa fa-angle-down" 
-			ng-show="showInfoTable">
-		</i>
-		<i class="fa fa-angle-up"
-			ng-show="!showInfoTable">
-		</i>
-	</span>
+	<div ng-include="'pages/home/infoTableHeader.html'"></div>
 
 	<!-- info table -->
-	<div id="infoTable" 
-		class="col-md-3"
-		ng-show="showInfoTable" 
-		ng-include="'pages/home/infoTable.html'">
-	</div>
+	<div id="infoTable" class="col-md-3" ng-show="showInfoTable" ng-include="'pages/home/infoTable.html'"></div>
 
 	<!-- tutor reservation table header -->
-	<span class="col-md-12 collapse-header" ng-click="alterShowReserveTable()">
-		<h3>Make a reservation</h3>
-		<i class="fa fa-angle-down" 
-			ng-show="showReserveTable">
-		</i>
-		<i class="fa fa-angle-up"
-			ng-show="!showReserveTable">
-		</i>
-	</span>
+	<div ng-include="'pages/home/reserveTableHeader.html'"></div>
 
 	<!-- tutor reservation table -->
-	<div id="reserveTable" 
-		ng-show="showReserveTable" 
-		ng-include="'pages/home/reserveTable.html'"></div>
+	<div id="reserveTable" ng-show="showReserveTable" ng-include="'pages/home/reserveTable.html'"></div>
 
 </div>

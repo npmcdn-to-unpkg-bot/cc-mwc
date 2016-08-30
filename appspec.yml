@@ -15,6 +15,9 @@ files:
 
   - source: db
     destination: /opt/ccmwc/db
+
+  - source: docs
+    destination: /opt/ccmwc/docs
     
   - source: lib
     destination: /opt/ccmwc/lib

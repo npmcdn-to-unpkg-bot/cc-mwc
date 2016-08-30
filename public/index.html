@@ -33,22 +33,7 @@
 <body>
 
 	<!-- top-fixed navigation bar -->
-	<div class="container-fluid">
-		<nav class="navbar navbar-default navbar-fixed-top">
-			<div class="container">
-				<div class="navbar-header">
-					<ul class="nav navbar-nav">
-						<li><a ng-href="/#/">Reserve a tutor</a></li>
-					</ul>
-				</div>
-				<div class="collapse navbar-collapse">
-					<ul id="nav-opts" class="nav navbar-nav">
-						<li><a ng-href="/#/admin">Admin <i class="fa fa-sign-in"></i></a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-	</div>
+	<div class="container-fluid" ng-include="'pages/main/navbar.html'"></div>
 
 	<!-- import views -->
 	<div id="imported-views" class="container" ng-view></div>

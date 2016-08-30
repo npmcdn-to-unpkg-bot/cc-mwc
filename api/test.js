@@ -1,4 +1,12 @@
 
+/**
+ * @module module:express
+ *
+ * @author Cyrus Sarkosh
+ *
+ * @desc A simple test route for get requests.
+ */
+
 // dependencies
 var router = require('express').Router();
 

@@ -1,17 +1,40 @@
 
+/**
+ * @author Cyrus Sarkosh
+ *
+ * @name homeController
+ * @desc Provides methods and variables for all pages in admin/ directory.
+ */
+
 angular.module('app-angular')
 .controller('homeController', ['$scope', function($scope) {
 
-	// initialize table visibility
+	/** 
+	 * @member {Boolean} showInfoTable 
+	 * @desc Tells UI whether to display the info table. 
+	 */
 	$scope.showInfoTable = true;
+
+	/** 
+	 * @member {Boolean} showReserveTable 
+	 * @desc Tells UI whether to display the reservation table. 
+	 */
 	$scope.showReserveTable = true;
 
-	// alter infoTable visibility
+	/** 
+	 * @function
+	 * @name alterShowInfoTable
+	 * @desc Flips boolean value of @member showInfoTable
+	 */
 	$scope.alterShowInfoTable = function() {
 		$scope.showInfoTable = !$scope.showInfoTable;
 	}
 
-	// alter reserveTable visibility
+	/** 
+	 * @function
+	 * @name alterShowReserveTable
+	 * @desc Flips boolean value of @member showReserveTable
+	 */
 	$scope.alterShowReserveTable = function() {
 		$scope.showReserveTable = !$scope.showReserveTable;
 	}

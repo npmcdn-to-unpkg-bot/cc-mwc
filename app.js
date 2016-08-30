@@ -1,14 +1,15 @@
 
 /**
- * @module module:express
- * @module module:body-parser
- * @module module:mysql
- * @module module:lib/log
- * @module module:api/api
+ * @requires module:express
+ * @requires module:body-parser
+ * @requires module:mysql
+ * @requires module:lib/log
+ * @requires module:api/api
  *
  * @author Cyrus Sarkosh
  * @author Michael Nissenson
  *
+ * @module app
  * @desc Launches application on port 8080
  */
 
@@ -31,11 +32,8 @@ var connection = handleDisconnect({
 });
 
 // set global vars
-/** @global */
 app.set('connection', connection);
-/** @global */
 app.set('express', express);
-/** @global */
 app.set('mysql', mysql);
 
 // middleware

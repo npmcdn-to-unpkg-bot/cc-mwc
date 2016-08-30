@@ -1,10 +1,11 @@
 
 /**
- * @module module:express
- * @module module:test
+ * @requires module:express
+ * @requires module:test
  *
  * @author Cyrus Sarkosh
  *
+ * @module /api
  * @desc Routes requests to the API to the appropriate subroutes
  */
 

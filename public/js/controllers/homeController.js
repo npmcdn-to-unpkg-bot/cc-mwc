@@ -2,7 +2,7 @@
 /**
  * @author Cyrus Sarkosh
  *
- * @name homeController
+ * @module homeController
  * @desc Provides methods and variables for all pages in admin/ directory.
  */
 

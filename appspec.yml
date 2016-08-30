@@ -10,6 +10,9 @@ files:
   - source: app.js
     destination: /opt/ccmwc
 
+  - source: conf.json
+    destination: /opt/ccmwc
+
   - source: db
     destination: /opt/ccmwc/db
     

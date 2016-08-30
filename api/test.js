@@ -1,9 +1,10 @@
 
 /**
- * @module module:express
+ * @requires module:express
  *
  * @author Cyrus Sarkosh
  *
+ * @module /api/test
  * @desc A simple test route for get requests.
  */
 

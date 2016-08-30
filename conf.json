@@ -1,6 +1,6 @@
 {
 	"source": {
-		"include": ["./"],
+		"include": ["./", "./package.json", "./README.md"],
 		"exclude": ["node_modules/"]
 	},
 	"opts": {

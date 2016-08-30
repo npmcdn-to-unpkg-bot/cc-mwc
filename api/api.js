@@ -1,4 +1,13 @@
 
+/**
+ * @module module:express
+ * @module module:test
+ *
+ * @author Cyrus Sarkosh
+ *
+ * @desc Routes requests to the API to the appropriate subroutes
+ */
+
 // dependencies
 var router = require('express').Router();
 

@@ -1,0 +1,18 @@
+
+<table class="table table-bordered table-responsive" ng-repeat="reserveData in reserveData.reservationTable">
+	<thead>
+		<th class="date">{{reserveData.date}}</th>
+		<th colspan="{{reserveData.span ? reserveData.span : 1}}" ng-repeat="time in reserveData.timeHeaders">{{time}}</th>
+	</thead>
+	<tbody>
+		<tr ng-repeat="tutor in reserveData.tutors">
+			<td class="tutorName">{{tutor.name}}</td>
+			<td class="apptTimes {{appt.availability ? appt.availability : 'Unavailable'}}" 
+				colspan="{{appt.span ? appt.span : 1}}" 
+				ng-repeat="appt in tutor.availabilities"></td>
+		</tr>
+		<tr ng-show="{{!reserveData.tutors}}">
+			<td class="noTutors" colspan="100%">No tutors available.</td>
+		</tr>
+	</tbody>
+</table>

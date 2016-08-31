@@ -20,3 +20,33 @@
 #home-div span.collapse-header:hover {
 	cursor: pointer;
 }
+
+
+
+
+
+/* tutor reservation table styles */
+
+#home-div th.date {
+	min-width: 160px;
+	width: 160px;
+	max-width: 160px;
+}
+
+#home-div td.tutorName {
+	min-width: 160px;
+	width: 160px;
+	max-width: 160px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+
+}
+
+#home-div td.noTutors {
+	text-align: center;
+}
+
+#home-div td.Available { background-color: lightblue; }
+#home-div td.Reserved { background-color: darkgrey; }
+#home-div td.Unavailable { background-color: lightgrey; }

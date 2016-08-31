@@ -1,0 +1,71 @@
+$scope.reserveData = {
+	reservationTable: [
+		{
+			date: 'Aug. 30: Tuesday',
+			timeHeaders: ['9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm'],
+			span: 1,
+			tutors: [
+				{
+					name: 'Cyrus S.',
+					emailHash: 'thisIsAHash',
+					availabilities: [
+						{
+							availability: 'Available'
+						},
+						{
+							availability: 'Available'
+						},
+						{
+							availability: 'Available'
+						},
+						{
+							availability: 'Available'
+						},
+						{
+							availability: 'Unavailable'
+						},
+						{
+							availability: 'Unavailable'
+						},
+						{
+							availability: 'Unavailable'
+						},
+						{
+							availability: 'Unavailable'
+						},
+						{
+							availability: 'Unavailable'
+						}
+					]
+				}
+			]
+		},
+		{
+			date: 'Aug. 31: Wednesday',
+			timeHeaders: ['9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm']
+		},
+		{
+			date: 'Sep. 1: Thursday',
+			timeHeaders: ['9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm']
+		},
+		{
+			date: 'Sep. 1: Friday',
+			timeHeaders: ['9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm']
+		},
+		{
+			date: 'Sep. 4: Monday',
+			timeHeaders: ['9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm']
+		},
+		{
+			date: 'Sep. 5: Tuesday',
+			timeHeaders: ['9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm']
+		},
+		{
+			date: 'Sep. 6: Wednesday',
+			timeHeaders: ['9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm']
+		}
+	],
+	emailHashes: [
+		'thisIsAHash'
+	]
+}

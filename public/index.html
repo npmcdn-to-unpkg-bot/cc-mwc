@@ -3,26 +3,29 @@
 <html ng-app="app-angular" lang="en">
 <head>
 
-	<!-- import scripts -->
+	<!-- dependencies -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
 		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
 		crossorigin="anonymous"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+	<script src="https://npmcdn.com/angular-ui-router/release/angular-ui-router.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-cookies.js"></script>
+	<script type="text/javascript" src="/js/dependencies/stormpath-sdk-angularjs.min.js"></script>
+	<script type="text/javascript" src="/js/dependencies/stormpath-sdk-angularjs.tpls.min.js"></script>
 
-	<!-- import styles -->
+	<!-- stylesheets -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<link rel="stylesheet" type="text/css" href="css/home.css">
-	<link rel="stylesheet" type="text/css" href="css/admin.css">
+	<link rel="stylesheet" type="text/css" href="/css/index.css">
+	<link rel="stylesheet" type="text/css" href="/css/home.css">
+	<link rel="stylesheet" type="text/css" href="/css/admin.css">
 
-	<!-- angular imports -->
-	<script src="js/app-angular.js"></script>
-	<script src="js/controllers/home.controller.js"></script>
-	<script src="js/controllers/admin.controller.js"></script>
+	<!-- angular modules -->
+	<script src="/js/app-angular.js"></script>
+	<script src="/js/controllers/home.controller.js"></script>
+	<script src="/js/controllers/admin.controller.js"></script>
+	<script src="/js/controllers/login.controller.js"></script>
 
 	<!-- meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,7 +39,7 @@
 	<div class="container-fluid" ng-include="'pages/main/navbar.html'"></div>
 
 	<!-- import views -->
-	<div id="imported-views" class="container" ng-view></div>
+	<div id="imported-views" class="container" ui-view></div>
 
 </body>
 </html>

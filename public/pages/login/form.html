@@ -1,0 +1,19 @@
+
+<form>
+
+	<!-- username -->
+	<div class="form-group">
+		<label for="login-username">Username</label>
+		<input id="login-username" type="text" ng-model="user.username" placeholder="Username" required>
+	</div>
+
+	<!-- password -->
+	<div class="form-group">
+		<label for="login-password">Password</label>
+		<input id="login-password" type="password" ng-model="user.password" placeholder="Password" required>
+	</div>
+
+	<!-- submit -->
+	<button class="btn btn-default" ng-click="login()" type="submit">Submit</button>
+
+</form>

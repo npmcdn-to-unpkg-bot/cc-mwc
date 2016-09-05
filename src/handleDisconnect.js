@@ -11,13 +11,18 @@
  * @throws {object} err An error that occurs when attempting to connect to a mysql database that is not the PROTOCOL_CONNECTION_LOST error
  */
 
+
 var mysql = require('mysql');
 var log = require('./log');
+
+
+var connection;
+
 
 module.exports = function handleDisconnect(config) {
 
 	// configure connection
-	var connection = mysql.createConnection(config);
+	connection = mysql.createConnection(config);
 	
 	// attempt to connect
 	connection.connect(function(err) {
@@ -35,7 +40,7 @@ module.exports = function handleDisconnect(config) {
 	// otherwise, throw error
 	connection.on('error', function(err) {
 		if (err.code === 'PROTOCOL_CONNECTION_LOST') {
-			handleDisconnect();
+			handleDisconnect(config);
 		} else {
 			throw err;
 		}

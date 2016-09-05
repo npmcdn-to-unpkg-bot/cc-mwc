@@ -4,8 +4,6 @@ version: 0.0
 
 
 files:
-  - source: api
-    destination: /opt/ccmwc/api
 
   - source: app.js
     destination: /opt/ccmwc
@@ -15,15 +13,15 @@ files:
 
   - source: db
     destination: /opt/ccmwc/db
-    
-  - source: lib
-    destination: /opt/ccmwc/lib
 
   - source: package.json
     destination: /opt/ccmwc
 
   - source: public
     destination: /opt/ccmwc/public
+    
+  - source: src
+    destination: /opt/ccmwc/src
 
 
 

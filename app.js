@@ -14,21 +14,24 @@
  */
 
 // dependencies
-var bodyParser = require('body-parser');
-var express = require('express');
-var fs = require('fs');
-var https = require('https');
-var mysql = require('mysql');
-var path = require('path');
+var bodyParser 	= require('body-parser');
+var express 	= require('express');
+var fs 			= require('fs');
+var https 		= require('https');
+var mysql 		= require('mysql');
+var path 		= require('path');
+var stormpath 	= require('express-stormpath');
 
 // custom modules
-var log = require('./src/log');
-var handleDisconnect = require('./src/handleDisconnect');
-var api = require('./src/api/api');
+var log 				= require('./src/log');
+var handleDisconnect 	= require('./src/handleDisconnect');
+var api 				= require('./src/api/api');
 
 // setup dependencies
-var app = express();
-var connection = handleDisconnect({
+var app 		= express();
+app.set('trust proxy', true);
+const PORT 		= 8443;
+var connection 	= handleDisconnect({
 	host: 'localhost',
 	user: 'root',
 	database: 'ccmwc'
@@ -41,11 +44,35 @@ app.set('mysql', mysql);
 
 // middleware
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(stormpath.init(app, {
+	debug: 'info',
+	web: {
+		postLoginHandler:  function(acc, req, res, nxt) {
+			res.redirect(302, '/admin').end();
+		},
+		postLogoutHandler: function(acc, req, res, nxt) {
+			res.redirect(302, '/').end();
+		},
+		produces: ['application/json'],
+		spa: {
+			enabled: true,
+			view: path.join(__dirname, 'public', 'index.html')
+		}
+	}
+}));
 
-// api routes
+// api route
 app.use('/api', api);
+app.get('/login', function(req, res) { res.redirect('/#/login'); });
+app.get('/admin', function(req, res) { res.redirect('/#/admin'); });
 
-// set port
-app.listen(8080, function() {
-	log('application using port 8080', 'app');
+// launch server once stormpath is ready
+app.on('stormpath.ready', function() {
+	console.log('stormpath ready');
+	https.createServer({
+		cert: fs.readFileSync(path.join(__dirname, 'ssl', 'server.crt')),
+		key: fs.readFileSync(path.join(__dirname, 'ssl', 'server.key'))
+	}, app).listen(PORT, function() {
+		console.log('app.js listening on PORT ', PORT)
+	});
 });

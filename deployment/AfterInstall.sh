@@ -7,4 +7,4 @@ cd /opt/ccmwc
 npm install --production
 
 # copy secure files
-cp ../secure/* ./
+cp -rf ../secure/stormpath.yml ./

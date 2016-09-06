@@ -6,7 +6,8 @@
  * @desc Provides methods and variables for all pages in the login/ directory.
  */
 angular.module('app-angular')
-.controller('loginController', ['$http', '$scope', '$window', function($http, $scope, $window) {
+.controller('loginController', ['$http', '$rootScope', '$scope', '$state', 'vcRecaptchaService', '$window', 
+function($http, $rootScope, $scope, $state, vcRecaptchaService, $window) {
 
 	/**
 	 * @member {object} user
@@ -18,16 +19,32 @@ angular.module('app-angular')
 	}
 
 	/**
+	 * @member {object} recaptcha
+	 * @desc Holds reCAPTCHA info
+	 */
+	 $scope.recaptcha = {
+	 	key: '6Lc5bCkTAAAAAJPjIbrpQ9fBs6ATd61WSqCL5LEV',
+	 	res: null
+	 }; 
+
+	 $scope.loginFailed = $rootScope.loginFailed;
+
+	/**
 	 * @function
 	 * @name login
-	 * @desc Sends user login info to server.
+	 * @desc Sends login form to server.
 	 */
 	$scope.login = function() {
 		$http.post('/login', {
 			username: $scope.user.username,
-			password: $scope.user.password
+			password: $scope.user.password,
+			recaptcha: $scope.recaptcha.res
 		}).then(function(successRes) {
+			$rootScope.loginFailed = false;
 			$window.location.reload();
+		}, function(failRes) {
+			$rootScope.loginFailed = true;
+			$state.reload();
 		});
 	}
 

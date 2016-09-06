@@ -9,7 +9,7 @@
  * @desc Provides client-side routing to UI angular app. Available routes are: '/', '/admin'. All other routes default to '/'.
  */
 
-angular.module('app-angular', ['ngCookies', 'ui.router', 'stormpath', 'stormpath.templates'])
+angular.module('app-angular', ['ngCookies', 'ui.router', 'stormpath', 'stormpath.templates', 'vcRecaptcha'])
 .config(function($stateProvider, $urlRouterProvider) {
 
 	$urlRouterProvider.otherwise('/');
@@ -46,7 +46,9 @@ angular.module('app-angular', ['ngCookies', 'ui.router', 'stormpath', 'stormpath
 	$stateProvider.state('admin', admin);
 
 })
-.run(function($stormpath) {
+.run(function($rootScope, $stormpath) {
+	$rootScope.loginFailed = false;
+
 	$stormpath.uiRouter({
 		forbiddenState: 'login',
 		defaultPostLoginState: 'admin',

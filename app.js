@@ -17,9 +17,11 @@
 var bodyParser 	= require('body-parser');
 var express 	= require('express');
 var fs 			= require('fs');
+var http 		= require('http');
 var https 		= require('https');
 var mysql 		= require('mysql');
 var path 		= require('path');
+var rest		= require('restler');
 var stormpath 	= require('express-stormpath');
 
 // custom modules
@@ -31,6 +33,7 @@ var api 				= require('./src/api/api');
 var app 		= express();
 app.set('trust proxy', true);
 const PORT 		= 8443;
+const RECAPT_SECRET = require('./reCAPTCHA.json').secret;
 var connection 	= handleDisconnect({
 	host: 'localhost',
 	user: 'root',
@@ -46,6 +49,20 @@ app.set('mysql', mysql);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(stormpath.init(app, {
 	debug: 'info',
+	preLoginHandler: function(data, req, res, nxt) {
+		rest.post('https://www.google.com/recaptcha/api/siteverify', {
+			data: {
+				secret: RECAPT_SECRET,
+				response: data.recaptcha
+			}
+		}).on('complete', function(result, response) {
+			if (result.success) {
+				nxt();
+			} else {
+				nxt(new Error('Invalid reCAPTCHA.'));
+			}
+		});
+	},
 	web: {
 		postLoginHandler:  function(acc, req, res, nxt) {
 			res.redirect(302, '/admin').end();
@@ -63,6 +80,8 @@ app.use(stormpath.init(app, {
 
 // api route
 app.use('/api', api);
+
+// client redirect routes
 app.get('/login', function(req, res) { res.redirect('/#/login'); });
 app.get('/admin', function(req, res) { res.redirect('/#/admin'); });
 

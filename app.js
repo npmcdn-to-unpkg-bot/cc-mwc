@@ -30,11 +30,10 @@ var handleDisconnect 	= require('./src/handleDisconnect');
 var api 				= require('./src/api/api');
 
 // setup dependencies
-var app 		= express();
+var app = express();
 app.set('trust proxy', true);
-const PORT 		= 8443;
-const RECAPT_SECRET = require('./reCAPTCHA.json').secret;
-var connection 	= handleDisconnect({
+const PORT = 8443;
+var connection = handleDisconnect({
 	host: 'localhost',
 	user: 'root',
 	database: 'ccmwc'
@@ -49,20 +48,6 @@ app.set('mysql', mysql);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(stormpath.init(app, {
 	debug: 'info',
-	preLoginHandler: function(data, req, res, nxt) {
-		rest.post('https://www.google.com/recaptcha/api/siteverify', {
-			data: {
-				secret: RECAPT_SECRET,
-				response: data.recaptcha
-			}
-		}).on('complete', function(result, response) {
-			if (result.success) {
-				nxt();
-			} else {
-				nxt(new Error('Invalid reCAPTCHA.'));
-			}
-		});
-	},
 	web: {
 		postLoginHandler:  function(acc, req, res, nxt) {
 			res.redirect(302, '/admin').end();
@@ -82,8 +67,8 @@ app.use(stormpath.init(app, {
 app.use('/api', api);
 
 // client redirect routes
-app.get('/login', function(req, res) { res.redirect('/#/login'); });
 app.get('/admin', function(req, res) { res.redirect('/#/admin'); });
+app.get('/login', function(req, res) { res.redirect('/#/login'); });
 
 // launch server once stormpath is ready
 app.on('stormpath.ready', function() {

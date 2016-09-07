@@ -6,8 +6,8 @@
  * @desc Provides methods and variables for all pages in the login/ directory.
  */
 angular.module('app-angular')
-.controller('loginController', ['$http', '$rootScope', '$scope', '$state', 'vcRecaptchaService', '$window', 
-function($http, $rootScope, $scope, $state, vcRecaptchaService, $window) {
+.controller('loginController', ['$http', '$rootScope', '$scope', '$state', '$window', 
+function($http, $rootScope, $scope, $state, $window) {
 
 	/**
 	 * @member {object} user
@@ -19,15 +19,10 @@ function($http, $rootScope, $scope, $state, vcRecaptchaService, $window) {
 	}
 
 	/**
-	 * @member {object} recaptcha
-	 * @desc Holds reCAPTCHA info
+	 * @member {boolean} loginFailed
+	 * @desc Holds whether info if user login failed
 	 */
-	 $scope.recaptcha = {
-	 	key: '6Lc5bCkTAAAAAJPjIbrpQ9fBs6ATd61WSqCL5LEV',
-	 	res: null
-	 }; 
-
-	 $scope.loginFailed = $rootScope.loginFailed;
+	$scope.loginFailed = $rootScope.loginFailed;
 
 	/**
 	 * @function
@@ -37,8 +32,7 @@ function($http, $rootScope, $scope, $state, vcRecaptchaService, $window) {
 	$scope.login = function() {
 		$http.post('/login', {
 			username: $scope.user.username,
-			password: $scope.user.password,
-			recaptcha: $scope.recaptcha.res
+			password: $scope.user.password
 		}).then(function(successRes) {
 			$rootScope.loginFailed = false;
 			$window.location.reload();

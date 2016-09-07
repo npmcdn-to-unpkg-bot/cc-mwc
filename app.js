@@ -37,10 +37,9 @@ var connection = handleDisconnect({
 	host: 'localhost',
 	user: 'root',
 	database: 'ccmwc'
-});
+}, app);
 
 // set global vars
-app.set('connection', connection);
 app.set('express', express);
 app.set('mysql', mysql);
 

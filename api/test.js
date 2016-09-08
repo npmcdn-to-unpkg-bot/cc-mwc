@@ -11,11 +11,6 @@
 // dependencies
 var router = require('express').Router();
 
-// api/test exclusive middleware
-router.use(function(req, res, next) {
-	next();
-})
-
 // requests
 .route('/')
 	.get(function(req, res) {

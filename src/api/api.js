@@ -19,6 +19,7 @@ router.use(function(req, res, next) {
 
 // add routes here
 .use('/test', require('./test'))
+.use('/reservationTable', require('./reservationTable'))
 
 // handle requests to api router
 .route('/')

@@ -1,0 +1,7 @@
+{
+	"appt_duration": 45,
+	"number_of_days": 7,
+	"date_format": "MMM. D: dddd",
+	"time_format": "h:mma",
+	"time_increment" : 60
+}

@@ -43,7 +43,7 @@ module.exports = function handleDisconnect(config, app) {
 	// otherwise, throw error
 	connection.on('error', function(err) {
 		if (err.code === 'PROTOCOL_CONNECTION_LOST') {
-			handleDisconnect(config);
+			handleDisconnect(config, app);
 		} else {
 			throw err;
 		}

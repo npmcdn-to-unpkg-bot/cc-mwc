@@ -33,7 +33,7 @@ var api 				= require('./src/api/api');
 var app = express();
 app.set('trust proxy', true);
 const PORT = 8443;
-var connection = handleDisconnect({
+handleDisconnect({
 	host: 'localhost',
 	user: 'root',
 	database: 'ccmwc'

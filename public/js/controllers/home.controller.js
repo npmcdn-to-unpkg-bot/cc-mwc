@@ -7,7 +7,7 @@
  */
 
 angular.module('app-angular')
-.controller('homeController', ['$scope', function($scope) {
+.controller('homeController', ['$http', '$scope', function($http, $scope) {
 
 	/** 
 	 * @member {Boolean} showInfoTable 
@@ -38,5 +38,20 @@ angular.module('app-angular')
 	$scope.alterShowReserveTable = function() {
 		$scope.showReserveTable = !$scope.showReserveTable;
 	}
+
+	/**
+	 * @function
+	 * @name getReserveTableData
+	 * @desc Retrieves reservation table data from server
+	 */
+	 $http({
+	 	method: 'GET',
+	 	url: '/api/reservationTable'
+	 }).then(function success(res) {
+	 	console.log(res);
+	 	$scope.reservationData = res.data;
+	 }, function fail(res) {
+	 	console.log(res);
+	 });
 
 }]);

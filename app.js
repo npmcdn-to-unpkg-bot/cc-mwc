@@ -25,9 +25,9 @@ var rest		= require('restler');
 var stormpath 	= require('express-stormpath');
 
 // custom modules
-var log 				= require('./src/log');
-var handleDisconnect 	= require('./src/handleDisconnect');
-var api 				= require('./src/api/api');
+var api 				= require('./api/api');
+var handleDisconnect 	= require('./services/handleDisconnect');
+var log 				= require('./services/log');
 
 // setup dependencies
 var app = express();

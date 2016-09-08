@@ -8,10 +8,10 @@
  */
 
 // dependencies
-var log 	= require('../log');
+var config 	= require('../tableConfig.json');
+var log		= require('../services/log');
 var moment 	= require('moment');
 var router 	= require('express').Router();
-var config 	= require('../../tableConfig.json');
 
 // route requests
 router.route('/')
